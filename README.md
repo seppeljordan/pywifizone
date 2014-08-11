@@ -21,3 +21,14 @@ tests yet.
 Please report bugs and feature requests at
 https://github.com/baldulin/pywifizone/issues
 
+## Manual
+
+The manual is stored in **pywifi.7.gz** and is available after installation with
+
+```
+man pywifi
+```
+
+## Completion
+
+With installation the autocompletion file **complete_pywifi.sh** will installed.
