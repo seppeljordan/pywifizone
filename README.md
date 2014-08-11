@@ -19,5 +19,5 @@ tests yet.
 ## Bugs reports
 
 Please report bugs and feature requests at
-https://github.com/baldulin/python-gitlab/issues
+https://github.com/baldulin/pywifizone/issues
 
