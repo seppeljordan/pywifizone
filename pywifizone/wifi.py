@@ -418,7 +418,7 @@ def _basic(_zone, zones, short = False):
             (missing, overflow, compare, c) = zones[o].compare(zone)
             
             if short:
-                print ("Compare: \x1B[34m%8s\x1B[0m  Score:\x1B[31m%f\x1B[0m"\
+                print ("Compare: \x1B[34m%8s\x1B[0m Score:\x1B[31m%.4f\x1B[0m "\
                         + "Missing:%d Overflow:%d")\
                         % (o, c, len(missing), len(overflow))
             else:
