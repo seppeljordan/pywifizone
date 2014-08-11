@@ -15,9 +15,9 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #
+
 from wifi import *
 from optparse import OptionParser
-
 
 usage = "usage: %prog [options] arg"
 parser = OptionParser(usage)
@@ -42,12 +42,22 @@ if options.command not in ["basic","short","inter","score",None]:
                 % options.command
 
         sys.exit(2)
+elif options.command == "basic":
+    options.command = None
 
 try:
-    options.takes = int(options.takes)
+    if options.takes != None:
+        options.takes = int(options.takes)
 except:
     print "Takes needs to be an integer >= 0 [-t <takes>]"
     sys.exit(3)
+
+try:
+    if options.sleep != None:
+        options.sleep = int(options.sleep)
+except:
+    print "Sleep needs to be an integer >= 0 [-s <sleep>]"
+    sys.exit(4)
 
 main(pick = options.filename,
         cur = options.command,
