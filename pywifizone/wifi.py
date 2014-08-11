@@ -399,6 +399,7 @@ def _interactive(_zone, zones):
 
 def updateZone(zone, n, slp = 5):
     global data
+
     """ Update Zones to accumulate info """
     for i in range(n):
         # Fetch data:
@@ -494,11 +495,14 @@ def main(pick, cur = None, tim = None, _slp = 5, device = None):
         raise TypeError("pyWifiZone needs a Zone Pickle")
 
     zone = None
-    if cur in zones:
-        zone = zones[cur]
+    if cur not in ["basic","short","inter","score",None]:
+        try:
+            zone = zones[cur]
+        except:
+            zone = Zone()
 
         # Create Zone or Update
-        zones[cur] = updateZone(zone, tim)
+        zones[cur] = updateZone(zone, tim, slp=slp)
         # Dump the data
         pickle.dump(zones, open(pick,"wb"))
 
