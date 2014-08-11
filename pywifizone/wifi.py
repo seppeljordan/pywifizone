@@ -424,8 +424,8 @@ def _basic(_zone, zones, short = False):
             else:
                 # Print Long Basic
                 print "Compare: \x1B[34m%s\x1B[0m:" % o
-                print "\tMissing: \x1B[33m%d\x1B[0m\t\t"\
-                        + "Overflow: \x1B[33m%d\x1B[0m"\
+                print ("\tMissing: \x1B[33m%d\x1B[0m\t\t"\
+                        + "Overflow: \x1B[33m%d\x1B[0m")\
                         % (len(missing), len(overflow))
 
                 # Print The Missing and overflown wifis
