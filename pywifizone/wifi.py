@@ -495,7 +495,7 @@ def main(pick, cur = None, tim = None, _slp = 5, device = None):
         raise TypeError("pyWifiZone needs a Zone Pickle")
 
     zone = None
-    if cur not in ["basic","short","inter","score",None]:
+    if cur not in ["basic","short","inter","score","current", None]:
         try:
             zone = zones[cur]
         except:
