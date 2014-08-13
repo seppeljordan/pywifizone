@@ -292,7 +292,7 @@ def _current(_zone, zones):
             current = cur
             since = time.time()
         elif current != cur:
-            print ("\rMoved from \x1B[34m%s\x1B[0m (stayed" \
+            print ("\rMoved from \x1B[34m%s\x1B[0m (stayed " \
                 + "\x1B[32m%.2f\x1B[0m min) to \x1B[34m%s\x1B[0m") % \
                 (current, (time.time()-since)/60., cur)
 
