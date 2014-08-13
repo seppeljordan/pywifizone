@@ -279,7 +279,7 @@ def scan():
 
 def _current(_zone, zones):
     current = None
-    since = None
+    since = time.time()
     for zone in _update(_zone, slp):
         stat = dict()
         for o in zones:
@@ -291,17 +291,16 @@ def _current(_zone, zones):
         if current == None:
             current = cur
             since = time.time()
-
-        if current != cur:
-            print "\rMoved from \x1B[34m%s\x1B[0m (stayed" \
-                + "\x1B[32m%.2f\x1B[0m min) to \x1B[34m%s\x1B[0m" % \
+        elif current != cur:
+            print ("\rMoved from \x1B[34m%s\x1B[0m (stayed" \
+                + "\x1B[32m%.2f\x1B[0m min) to \x1B[34m%s\x1B[0m") % \
                 (current, (time.time()-since)/60., cur)
 
             current = cur
             since = time.time()
 
-        sys.stdout.write("\rCurrent: \x1B[34m%s\x1B[0m Since:"\
-                + "\x1B[32m%.2f\x1B[0m min\t\t\t" % \
+        sys.stdout.write(("\rCurrent: \x1B[34m%s\x1B[0m Since:"\
+                + "\x1B[32m%.2f\x1B[0m min\t\t\t") % \
                 (current, (time.time()-since)/60.))
         
 
