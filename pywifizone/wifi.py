@@ -109,8 +109,8 @@ class ZoneWifi(object):
     
     def __repr__(self):
         """ Returns Basic Info in a String """
-        return "Max:%d;Min:%d;Mean:%f;Var:%f" % \
-                (self.smax, self.smin, self.smean, self.var)
+        return "Max:%d;Min:%d;Mean:%f;Var:%f;Avail:%f" % \
+                (self.smax, self.smin, self.smean, self.var, self.unavail)
 
     # Same for string
     __str__ = __repr__
