@@ -56,8 +56,8 @@ try:
     if options.sleep != None:
         options.sleep = float(options.sleep)
 
-    if options.sleep <= 0:
-        raise Exception("Greater Zero")
+    if options.sleep < 0:
+        raise Exception("Greater Equal Zero")
 except:
     print "Sleep needs to be an integer >= 0 [-s <sleep>]"
     sys.exit(4)
