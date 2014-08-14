@@ -314,12 +314,16 @@ def _update(zone, slp=5):
     for i in _countreset(recr):
         if i:
             zone = Zone()
-
+        
+        t = time.time()
         fetch()
         zone.update(data)
-
+        t = time.time()-t
+        t = slp - t
         yield zone
-        time.sleep(slp)
+
+        if t > 0:
+            time.sleep(t)
 
 def _countreset(recr = 0):
     if recr == 0:
