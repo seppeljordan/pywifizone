@@ -3,7 +3,7 @@
 from distutils.core import setup
 
 setup(name="pywifizone",
-        version='1.1',
+        version='1.2',
         description='Geolocation tool by wifi data',
         author='baldulin',
         url='http://github.com/baldulin/pywifizone',
