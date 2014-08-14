@@ -1,14 +1,14 @@
 ## PyWifiZone
 
-PyWifiZone measures wifi-footprints in different locations, and tries locate a 
-wifi device based on this data. Right now this means the wifi device must check
-for the wifi-networks around it.
+PyWifiZone measures wifi-footprints in different locations and tries to locate a
+wifi device based on the data. This means you can locate yourself in a flat by 
+just comparing the different wifi signals and strengths.
 
-A Command Line Toll is provided named **pywifi**
+The Command Line Tool is named **pywifi** and installed into `/usr/bin/`
 
 ## Requirements
 
-PyWifiZone needs the linux command **iwlist**, and for full completion 
+PyWifiZone needs the linux command **iwlist** and for full completion 
 **iwconfig** as well as **sed** and a **bash** compatible shell.
 
 ## State
@@ -31,4 +31,5 @@ man pywifi
 
 ## Completion
 
-With installation the autocompletion file **complete_pywifi.sh** will installed.
+With installation the autocompletion file **complete_pywifi.sh** will be 
+installed into `/etc/bash_completion.d/`.

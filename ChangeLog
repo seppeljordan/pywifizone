@@ -1,3 +1,9 @@
+Version 1.2
+ * Adds current View
+ * Adds floating point sleep time
+ * Sleep time might be zero now
+ * Fixes some errors
+
 Version 1.1
  * Fixes Some Errors
 
