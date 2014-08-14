@@ -84,7 +84,10 @@ class Zone(object):
             n += 1
             c += compares[essid]
         
-        c = c / n
+        if n != 0:
+            c = c / n
+        else:
+            c = 0
         
         return (missing, overflow, compares, c)
 
