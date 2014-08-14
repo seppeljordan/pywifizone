@@ -23,7 +23,24 @@ https://github.com/baldulin/pywifizone/issues
 
 ## Manual
 
-The manual is stored in **pywifi.7.gz** and is available after installation with
+Fetch the Wifi Footprint of `roomx`
+
+```
+pywifi -f <DB_FILE> -c roomx -t 60 -s 0
+```
+
+Compare your current location to the ones stored in the database:
+
+```
+pywifi -f <DB_FILE> -c <VIEW> -s 0 -t 20
+```
+
+Where `<VIEW>` is `short`, `basic`, `inter`, `score` or `current`. The `-t`
+Option specifies after what period the wifi footprint last measured is removed.
+
+
+The full manual is stored in **pywifi.7.gz** and is available after installation
+with:
 
 ```
 man pywifi
