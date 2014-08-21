@@ -56,13 +56,13 @@ class Zone(object):
     
     def update(self, cells):
         """ Updates with new data """
-        for essid in cells.iterkeys():
-            zw = self.data[essid] if essid in self.data else ZoneWifi()
-            zw.update(cells[essid].signal)
-            self.data[essid] = zw
+        for address in cells.iterkeys():
+            zw = self.data[address] if address in self.data else ZoneWifi()
+            zw.update(cells[address].signal)
+            self.data[address] = zw
 
-        for essid in list(set(self.data.iterkeys()) - set(cells.iterkeys())):
-            zw = self.data[essid]
+        for address in set(self.data.iterkeys()) - set(cells.iterkeys()):
+            zw = self.data[address]
             zw.updateUnavail()
 
     def compare(self, other):
@@ -76,13 +76,13 @@ class Zone(object):
         compares = dict()
         c = 0
         n = 0
-        for essid in list(a & b):
-            za = self.data[essid]
-            zb = other.data[essid]
+        for address in list(a & b):
+            za = self.data[address]
+            zb = other.data[address]
 
-            compares[essid] = za.compare(zb)
+            compares[address] = za.compare(zb)
             n += 1
-            c += compares[essid]
+            c += compares[address]
         
         if n != 0:
             c = c / n
@@ -235,7 +235,7 @@ def fetch():
     for f in g:
         if isinstance(f, str):
             if cell_cur is not None:
-                data[o.essid] = o
+                data[o.address] = o
                 o = Cell()
 
             cell_cur = int(f)
@@ -442,9 +442,9 @@ def _basic(_zone, zones, short = False):
                         % (m[:15],n[:15]) 
         
                 # Print Comparisson
-                for essid in compare:
-                    print "\tEssid:%15s Score: %f" % \
-                            (essid[:15], compare[essid])
+                for address in compare:
+                    print "\tAddress:%18s Score: %f" % \
+                            (address, compare[address])
                 print "\x1B[32mTotal Score\x1B[0m:%f" % c
 
 def _score(_zone, zones):
