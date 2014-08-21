@@ -1,0 +1,75 @@
+.TH PYWIFI "1" "August 2014" "User Commands"
+.SH NAME
+pywifi \- Wifi Signal Analyst
+.SH SYNOPSIS
+.B pywifi
+[\fB-c\fR | \fB--command\fR [basic | short | inter | score]]
+[\fB-f\fR | \fB--file\fR \fIFILENAME\fR]
+[\fB-d\fR | \fB--device\fR \fIDEVICE\fR]
+[\fB-s\fR | \fB--sleep\fR \fISLEEP\fR]
+[\fB-t\fR | \fB--takes\fR \fITAKES\fR] 
+
+.B pywifi
+[\fB-c\fR | \fB--command\fR ZONE]
+[\fB-f\fR | \fB--file\fR \fIFILENAME\fR]
+[\fB-d\fR | \fB--device\fR \fIDEVICE\fR]
+[\fB-s\fR | \fB--sleep\fR \fISLEEP\fR]
+[\fB-t\fR | \fB--takes\fR \fITAKES\fR] 
+
+.B pywifi
+[\fB-h\fR | \fB--help\fR]
+
+.SH DESCRIPTION
+.PP
+This Programm enables the user to compare different places or zones by their
+wlan essid's and their signal strength.
+First Data for each placeis accumulated by updating the database 
+(a pickle file). And then the data of an unknown place can be compared to
+the accumulated data.
+
+.SH OPTIONS
+.PP
+The options that might be supplied are:
+.TP
+\fB\-h, \-\-help\fR
+Prints Help Message
+.TP
+\fB-f, --file\fR \fIFILENAME\fR
+Sets the database file to \fIFILENAME\fR
+.TP
+\fB-s, --sleep\fR \fISLEEP\fR
+Sets the time in between two measurements
+.TP
+\fB-d, --device\fR \fIDEVICE\fR
+Describes the device used in the iwlist command. If no device is given, all 
+devices are fetched.
+.TP
+\fB-c, --command\fR \fICMD\fR
+Changes what the programm does. There are four commands \fIbasic\fR the default
+value, \fIshort\fR, \fIinter\fR and \fIscore\fR. All these commands fetch the 
+current wifi essids and their signal strength. \fIinter\fR prints with ncurses 
+while \fIshort\fR and \fIbasic\fR print a lot information steadily to stdout.
+And \fIscore\fR just updates the score of each compared zone on one line.
+If a different string is supplied that string will be the name of the current
+zone that is going to be calibrated for \fB--take\fR takes.
+.TP
+\fB-t, --take\fR \fITAKE\fR
+Number of takes, or number of takes till the Zone will be reseted. Must be
+supplied if zone is to be calibrated
+.PP
+
+.SH COPYRIGHT
+Copyright \(C\) 2014  baldulin
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
