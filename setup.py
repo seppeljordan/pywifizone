@@ -1,6 +1,18 @@
 #!/usr/bin/python
 # -*- coding:utf-8
 from distutils.core import setup
+from sys import argv
+import subprocess
+
+manpagename="pywifi.7"
+
+if 'install' in argv:
+    # compress manpage
+    try:
+        subprocess.check_call(["gzip",manpagename,"-k","-f"])
+    except subprocess.CalledProcessError:
+        raise Exception("gzip command not found")
+        
 
 setup(name="pywifizone",
         version='1.2',
